@@ -104,6 +104,8 @@ a {
   box-sizing: border-box;
 
   margin-bottom: 100px;
+
+  scroll-margin-top: 100px;
 }
 
 /* #region About Me Section */
@@ -221,6 +223,10 @@ a {
 /* #region Projects Section */
 /* ######################## */
 
+.projects-section {
+    scroll-margin-top: 100px;
+}
+
 .projects {
     display: flex;
     align-items: center;
@@ -317,7 +323,9 @@ a {
 .experience-section {
     display: flex;
     margin-left: 40px;
-    margin-right: 40px
+    margin-right: 40px;
+
+    scroll-margin-top: 100px;
 }
 
 /* #region past-recent-arrow */
@@ -464,6 +472,8 @@ a {
     padding-bottom: 40px;
 
     margin-top: 48px;
+
+    scroll-margin-top: 100px;
 }
 
 .contact-me-section .left-side {
