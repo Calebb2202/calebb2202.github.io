@@ -123,7 +123,7 @@ a {
     flex-direction: row;
 
     /* Sizing stuff */
-    height: 7vh;
+    height: 64px;
     width: 95%;
     gap: 5vw;
 
