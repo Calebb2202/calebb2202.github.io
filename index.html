@@ -10,7 +10,7 @@
         <div id="nav-bar-content">
             <a class="nav-link" href="#hero-section">About me</a>
             <a class="nav-link" href="#projects-section">Projects</a>
-            <a class="nav-link" href="#experience">Experience</a>
+            <a class="nav-link" href="#experience-section">Experience</a>
             <a class="nav-link" href="#contact-me">Contact me</a>
             <h1>Caleb Boerma</h1>
         </div>
@@ -21,7 +21,7 @@
         <div class="hero-inner">
             <div id = "about-me">
                 <h1>Caleb Boerma</h1>
-                <p id = "education">Sophmore at Grand Valley State University</p>
+                <p id = "education">Junior at Grand Valley State University</p>
                 <div id = "hero-buttons">
                     <a class="hero-button" href="./assets/Caleb_Boerma_Resume.pdf">Resume</a>
                     <a class="hero-button" href="https://www.linkedin.com/in/caleb-boerma-351342382/">LinkedIn</a>
@@ -70,14 +70,16 @@
                     <h2>Personal Website</h2>
                     <div class="project-description">
                         <h3>Descripton:</h3>
-                        <p>This personal website your currently on is made using
-                            HTML and CSS. I learned the basics of HTML utilizing divs and classes.
-                            For CSS I learned how to position items, change colors, and create shapes.
+                        <p>Personal website your currently on is made using
+                            HTML, CSS, and JavaScript. I learned the fundamentals of HTML and CSS having been
+                            the first project I used them on. I then updated this website with Javascript skills
+                            I learned later.
                         </p>
                     </div>
                     <div class="tags">
                         <div class="tag">HTML</div>
                         <div class="tag">CSS</div>
+                        <div class="tag">JavaScript</div>
                         <div class="tag">Figma Design</div>
                     </div>
                     <img src="assets/personal-website.png" alt="Failed to load project image">
@@ -106,7 +108,43 @@
         </div>
     </div>
 
-    <div class = "experience-section" id="experience">
+    <div id="experience-section">
+        <h1>Experience</h1>
+        <div id="experience-section-content">
+            <div id="arrow">
+                <h3 class="arrow-text">Past</h3>
+                <div id="arrow-line"></div>
+                <p><i id="arrow-head"></i></p>
+                <h3 class="arrow-text">Most Recent</h3>
+            </div>
+            <div id="experiences-container">
+                <div class="experience">
+                    <div class="left-side">
+                        <div class="title">
+                            <h2>Pit Crew and Drive Team member</h2>
+                            <p>At FIRST Robotics team Mechanical Mustangs</p>
+                        </div>
+                        <div class="experience-content">
+                            <div class="experience-text">
+                                <h3>Tasks</h3>
+                                <p>
+                                    <ul>Operating robot during Competition</ul>
+                                    <ul>Helped with robot structure</ul>
+                                    <ul>Field Repairs</ul>
+                                </p>
+                            </div>
+                            <img class="experience-photo" src="assets/FIRST-robotics.png">
+                        </div>
+                    </div>
+                    <div class="experience-tags">
+                        <div class="tag">Python</div>
+                        <div class="tag">CSS</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- <div class = "experience-section" id="experience">
         <div class = "past-recent-arrow">
             <h3>Past</h3>
             <div class = "arrow">
@@ -290,7 +328,7 @@
                 <div class = "corner bottom-right"></div>
             </div>
         </div>
-    </div>
+    </div> -->
 
     <div class = "contact-me-section" id="contact-me">
         <div class = "contact-me-inner">
@@ -315,13 +353,6 @@
         </div>
     </div>
 
-    <script>
-        const projectDescriptions = document.getElementsByClassName("project-description")
-        for (let i = 0; i < projectDescriptions.length; i++){
-            console.log("inside")
-            let textLength = projectDescriptions[i].querySelector('p').textContent.length;
-            projectDescriptions[i].style.lineHeight = 500 / textLength
-        }
-    </script>
+    <script src="./main.js"></script>
 </body>
 </html>

@@ -12,20 +12,22 @@ body {
     /* alternative accents:
     salmon-pink: #FF7474 255, 116, 116
     light-blue: #87C9FF 135, 201, 255 
-    light-purple: #BE73EA 190, 115, 
-    tan: #E5D096
+    light-purple: #BE73EA 190, 115, 234
+    tan: #E5D096 229, 208, 150
     */
 
     --background-color: #222222;
     --background-color-rgb: rgb(34, 34, 34);
     /* alternative backgounds:
-    light black: #222222
+    light black: #222222 34, 34, 34
     non-pure white: #E8E8E8
     */
 
     --container-background: #3B3B3B;
 
-    
+    --content-background: #767676;
+
+    --off-white: #D9D9D9;
 
 
     /* sizing variables */
@@ -34,6 +36,9 @@ body {
 
         /* subtitle size ~ 48px */
         --subtitle: 3rem;
+
+        /* small title size ~ 36px */
+        --small-title: 2.25rem;
 
         /* main font size ~ 24px */
         --main-font: 1.5rem;
@@ -49,10 +54,13 @@ body {
     padding: 0;
 }
 
+body:hover {
+    cursor: default;
+}
+
 h1 {
     margin: 0;
     padding: 0;
-    color: rgb(var(--accent-color-rgb));
     font-family: 'Fredoka';
     font-weight: 600;
 }
@@ -87,13 +95,8 @@ a {
     font-size: var(--main-font);
 }
 
-button {
-    transition: transform 0.5s ease;
-    will-change: transform;
-}
-
 button:hover {
-    transform: scale(1.1)
+    cursor: pointer
 }
 
 /* #region Corners pieces */
@@ -184,6 +187,7 @@ button:hover {
 #nav-bar-content h1 {
     text-decoration: none;
     font-size: var(--main-font);
+    color: rgb(var(--accent-color-rgb));
     margin: 0;
 
     margin-left: auto;
@@ -263,12 +267,14 @@ button:hover {
     z-index: 0;
     margin: 30px;/* So extended salmon corners don't get cut off when screen cut down*/
 
+    border-radius: 15px;
     box-shadow: 15px 15px rgb(var(--accent-color-rgb));
 }
 
 #about-me h1 {
     font-size: var(--title);
     margin-top: 10%;
+    color: rgb(var(--accent-color-rgb));
 }
 
 #about-me p {
@@ -301,7 +307,7 @@ button:hover {
     transition: transform 0.5s ease;
 }
 
-.hero-button:hover{
+.hero-button:hover {
     transform: scale(1.1)
 }
 
@@ -347,7 +353,7 @@ button:hover {
     margin-bottom: 0;
 
     width: 95%;
-    height: 60%;
+    height: 70%;
 
     min-height: 640px;
     max-height: 1024px;
@@ -392,7 +398,7 @@ button:hover {
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
-    background-color: #767676;
+    background-color: var(--content-background);
     border-top-left-radius: 27px;
     border-top-right-radius: 27px;
 
@@ -435,6 +441,7 @@ button:hover {
     font-family: "Fredoka";
     font-weight: 500;
     color: white;
+    text-align: center;
 
     white-space: nowrap;
 }
@@ -465,6 +472,126 @@ button:hover {
 }
 
 /* #endregion */
+
+
+/* #region NEW EXPERIENCE REGION */
+
+#experience-section {
+    width: 95%;
+    max-width: 1440px;
+    margin: 0 auto;
+}
+
+#experience-section h1 {
+    color: white;
+    font-size: var(--subtitle);
+    text-align: center;
+}
+
+#experience-section-content {
+    display: flex;
+    flex-direction: row;
+}
+
+#arrow {
+    display: flex;
+    flex-direction: column;
+    color: rgb(var(--accent-color-rgb));
+    align-items: center;
+
+    width: 20%;
+}
+
+.arrow-text {
+    color: white;
+    padding: 8px;
+}
+
+#arrow-line {
+    border-left: 3px dashed rgb(var(--accent-color-rgb));
+    height: 0px;
+}
+
+#arrow-head {
+    border: solid rgb(var(--accent-color-rgb));
+    border-width: 0 3px 3px 0;
+    display: inline-block;
+    padding: 8px;
+    transform: rotate(45deg);
+}
+
+#experiences-container {
+    display: flex;
+    flex-direction: column;
+
+    width: 80%
+}
+
+.experience {
+    background-color: var(--container-background);
+    width: 80%;
+    margin: 15px;
+
+    display: flex;
+    flex-direction: row;
+
+    align-items: flex-start;
+}
+
+.left-side {
+    width: 80%;
+}
+
+.title {
+    position: relative;
+    top: -15;
+    left: -15;
+
+    background-color: var(--content-background);
+    padding: 12px;
+
+    min-width: 75%;
+    border-radius: 15px;
+
+    white-space: nowrap;
+}
+
+.title h2 {
+    color: rgb(var(--accent-color-rgb));
+    font-size: var(--small-title);
+    line-height: 1;
+}
+
+.title p {
+    margin-left: 30px;
+}
+
+.experience-content {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 30px;
+}
+
+.experience-photo {
+    width: 200px;
+    height: auto;
+
+    background-color: var(--off-white);
+}
+
+.experience-tags {
+    /* align-items: center;
+    flex: 1;
+    display: flex; */
+
+    margin: auto;
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
 
 /* ######################### */
 /* #region Experience Region */
@@ -582,7 +709,7 @@ button:hover {
     flex-direction: row;
     gap: 36px;
 
-    background-color: #767676;
+    background-color: var(--content-background);
     border-radius: 20px;
     padding: 16px;
     margin: 0;
@@ -618,10 +745,6 @@ button:hover {
 .experience-details .skills-used {
     /* expand to share remaining horizontal space */
     flex: 1 1 0;
-}
-
-.experience-details .tasks {
-    /* keep tasks and skills visually separated */
 }
 
 .experience-details .skills-used {
@@ -721,7 +844,6 @@ button:hover {
 }
 
 #send-button {
-
     min-width: 95px;
     border-radius: 35px;
     font-size: var(--main-font);
@@ -736,20 +858,29 @@ button:hover {
     border: #4C4C4C 1px solid;
 
     cursor: pointer;
+
+    will-change: transform;
+    transition: transform 0.5s ease, box-shadow 0.5s ease;
+}
+
+#send-button:hover {
+    transform: scale(1.05);
+    box-shadow: 3px 3px 10px var(--container-background);
 }
 
 .contact-me-section .email-form input {
     width: 40%;
 
     border-radius: 5px;
-    border: 1px solid var(--dark-grey);
+    border: 1px solid var(--container-background);
 
+    will-change: transform;
     transition: transform 0.5s ease, box-shadow 0.5s ease;
 }
 
 .email-form input:focus {
     outline: 0px;
-    box-shadow: 3px 3px 10px var(--dark-grey);
+    box-shadow: 3px 3px 10px var(--container-background);
     transform: scale(1.0125);
 }
 
@@ -759,7 +890,7 @@ button:hover {
     width: 70%;
     resize: none;
     border-radius: 5px;
-    border: 1px solid var(--dark-grey);
+    border: 1px solid var(--container-background);
 
     will-change: transform;
     transition: transform 0.5s ease, box-shadow 0.5s ease;
@@ -767,7 +898,7 @@ button:hover {
 
 #your-message-input:focus {
     outline: 0px;
-    box-shadow: 3px 3px 10px var(--dark-grey);
+    box-shadow: 3px 3px 10px var(--container-background);
     transform: scale(1.0125);
 }
 
