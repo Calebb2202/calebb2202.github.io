@@ -18,7 +18,7 @@
 
     <div id = "hero-section" class = "hero-section">
         <img id = "bg-img" src="assets/swiss_mountains.jpeg">
-        <div class="hero-inner">
+        <div id="hero-inner">
             <div id = "about-me">
                 <h1>Caleb Boerma</h1>
                 <p id = "education">Junior at Grand Valley State University</p>
@@ -30,10 +30,6 @@
                 <div id="degree-type">
                     <p>Computer Science Major,<br>Cybersecurity and Mathematics minor</p>
                 </div>
-                <!-- <div class = "corner top-left"></div>
-                <div class = "corner top-right"></div>
-                <div class = "corner bottom-left"></div>
-                <div class = "corner bottom-right"></div> -->
             </div>
 
             <img id = "head-shot" src="assets/head-shot.jpg" alt="Caleb Boerma's headshot">
@@ -41,7 +37,7 @@
     </div>
 
     <div id="projects-section">
-        <h1>Projects</h1>
+        <h1 class="section-title">Projects</h1>
         <div id = "projects">
             <div class = "project-container">
                 <div class = "project-content">
@@ -64,6 +60,7 @@
             </div>
 
             <div class = "project-divider"></div>
+            <div class = "project-divider-horizontal"></div>
 
             <div class = "project-container">
                 <div class = "project-content">
@@ -87,6 +84,7 @@
             </div>
 
             <div class = "project-divider"></div>
+            <div class = "project-divider-horizontal"></div>
 
             <div class = "project-container">
                 <div class = "project-content">
@@ -109,7 +107,7 @@
     </div>
 
     <div id="experience-section">
-        <h1>Experience</h1>
+        <h1 class="section-title">Experience</h1>
         <div id="experience-section-content">
             <div id="arrow">
                 <h3 class="arrow-text">Past</h3>
@@ -226,21 +224,19 @@
     </div>
 
     <div class = "contact-me-section" id="contact-me">
-        <div class = "contact-me-inner">
-            <div class = "experience-overview">
-                <h1>CONTACT ME HERE:</h1>
+        <div id = "contact-me-inner">
+            <div id = "contact-text">
+                <h1>CONTACT ME HERE</h1>
                 <h2>Or email me at: Calebb2202@gmail.com</h2>
             </div>
-            <div class = "email-form">
-            <form action="https://formsubmit.co/Calebb2202@gmail.com" method="POST">
+            <div id = "email-form">
 
-                <div class = "form-header">
-                    <h2>Your Email:</h2>
+            <form>
+                <h2>Your Email:</h2>
+                <div id = "form-row">
+                    <input type="email" name="email" placeholder="Your Email" required>
                     <button id="send-button" type="submit">Send</button>
                 </div>
-
-                <input type="email" name="email" placeholder="Your Email" required>
-                
                 <h2>Your Message:</h2>
                 <textarea id="your-message-input" name="message" rows="5" placeholder="Your Message" required></textarea>
             </form>
@@ -248,6 +244,7 @@
         </div>
     </div>
 
-    <script src="./main.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+<script src="./main.js"></script>
 </body>
 </html>
