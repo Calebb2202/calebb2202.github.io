@@ -5,16 +5,23 @@ const mainBurger = document.getElementById("main-burger")
             child.classList.toggle("open");
         });
         document.getElementById("hamburger-container").classList.toggle("open")
+        document.getElementById("main-burger").classList.toggle("open")
     });
 
-// Adjust line height of project descriptions based on long description is
+// Adjust line height of project descriptions based on long description length
 const projectDescriptions = document.getElementsByClassName("project-description")
-for (let i = 0; i < projectDescriptions.length; i++){
-    let textLength = projectDescriptions[i].querySelector('p').textContent.length;
-    projectDescriptions[i].querySelector('p').style.lineHeight = 350/textLength; //300 / textLength
+
+function updateProjectDescriptionLineHeight() {
+    const base = window.innerWidth < 900 ? 500 : 380;
+    for (let i = 0; i < projectDescriptions.length; i++) {
+        const p = projectDescriptions[i].querySelector('p');
+        const textLength = p.textContent.length;
+        p.style.lineHeight = base / textLength;
+    }
 }
 
 function onResize() {
+    updateProjectDescriptionLineHeight();
     // make experience arrow height
     const arrowLine = document.getElementById("arrow-line")
     const experiencesContainer = document.getElementById("experiences-container")
@@ -34,7 +41,7 @@ function onResize() {
 
         projectDividerHorizontal[i].style.width = 0
         if (window.innerWidth <= 900) {
-            projectDividerHorizontal[i].style.width = `${projects.offsetWidth*0.8}px`
+            projectDividerHorizontal[i].style.width = `${projects.offsetWidth*0.85}px`
         }
         
     }
