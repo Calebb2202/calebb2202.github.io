@@ -1,8 +1,17 @@
+// main-burger menu
+const mainBurger = document.getElementById("main-burger")
+    mainBurger.addEventListener("click", function(event){
+        mainBurger.querySelectorAll(".line").forEach(function(child) {
+            child.classList.toggle("open");
+        });
+        document.getElementById("hamburger-container").classList.toggle("open")
+    });
+
 // Adjust line height of project descriptions based on long description is
 const projectDescriptions = document.getElementsByClassName("project-description")
 for (let i = 0; i < projectDescriptions.length; i++){
     let textLength = projectDescriptions[i].querySelector('p').textContent.length;
-    projectDescriptions[i].querySelector('p').style.lineHeight = 500 / textLength;
+    projectDescriptions[i].querySelector('p').style.lineHeight = 350/textLength; //300 / textLength
 }
 
 function onResize() {

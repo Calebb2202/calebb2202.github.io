@@ -12,14 +12,27 @@
             <a class="nav-link" href="#projects-section">Projects</a>
             <a class="nav-link" href="#experience-section">Experience</a>
             <a class="nav-link" href="#contact-me">Contact me</a>
-            <h1>Caleb Boerma</h1>
         </div>
+        <div id="hamburger-container">
+            <div class="hamburger-menu">
+                <a class="nav-link" href="#hero-section">About me</a>
+                <a class="nav-link" href="#projects-section">Projects</a>
+                <a class="nav-link" href="#experience-section">Experience</a>
+                <a class="nav-link" href="#contact-me">Contact me</a>
+            </div>
+            <div id="main-burger" class="hamburger">
+                <div class="line line1"></div>
+                <div class="line line2"></div>
+                <div class="line line3"></div>
+            </div>
+        </div>
+        <h1>Caleb Boerma</h1>
     </div>
 
     <div id = "hero-section" class = "hero-section">
         <img id = "bg-img" src="assets/swiss_mountains.jpeg">
         <div id="hero-inner">
-            <div id = "about-me">
+            <div id = "about-me" class="apply-fade-in-left">
                 <h1>Caleb Boerma</h1>
                 <p id = "education">Junior at Grand Valley State University</p>
                 <div id = "hero-buttons">
@@ -32,14 +45,14 @@
                 </div>
             </div>
 
-            <img id = "head-shot" src="assets/head-shot.jpg" alt="Caleb Boerma's headshot">
+            <img id = "head-shot" class="apply-fade-in-right" src="assets/head-shot.jpg" alt="Caleb Boerma's headshot">
         </div>
     </div>
 
     <div id="projects-section">
         <h1 class="section-title">Projects</h1>
         <div id = "projects">
-            <div class = "project-container">
+            <div class = "project-container apply-fade-in-scale">
                 <div class = "project-content">
                     <h2>Pokemon Go Assistant</h2>
                     <div class="project-description">
@@ -62,7 +75,7 @@
             <div class = "project-divider"></div>
             <div class = "project-divider-horizontal"></div>
 
-            <div class = "project-container">
+            <div class = "project-container apply-fade-in-scale">
                 <div class = "project-content">
                     <h2>Personal Website</h2>
                     <div class="project-description">
@@ -86,7 +99,7 @@
             <div class = "project-divider"></div>
             <div class = "project-divider-horizontal"></div>
 
-            <div class = "project-container">
+            <div class = "project-container apply-fade-in-scale">
                 <div class = "project-content">
                     <h2>Discord Bot</h2>
                     <div class="project-description">
@@ -116,7 +129,7 @@
                 <h3 class="arrow-text">Most Recent</h3>
             </div>
             <div id="experiences-container">
-                <div class="experience">
+                <div class="experience apply-fade-in-left">
                     <div class="experience-overview">
                         <div class="title">
                             <h2>Pit Crew/Drive Team member</h2>
@@ -132,6 +145,11 @@
                                 </p>
                             </div>
                             <img class="experience-photo" src="assets/FIRST-robotics.png">
+                            <div class="experience-tags-mobile">
+                                <div class="tag">Team collaboration</div>
+                                <div class="tag">Craftsmanship</div>
+                                <div class="tag">Quick problem solving</div>
+                            </div>
                         </div>
                     </div>
                     <div class="experience-tags">
@@ -142,7 +160,7 @@
                     <div class="bottom-right-corner-bracket"></div>
                 </div>
 
-                <div class="experience">
+                <div class="experience apply-fade-in-left">
                     <div class="experience-overview">
                         <div class="title">
                             <h2>Intern</h2>
@@ -158,6 +176,11 @@
                                 </p>
                             </div>
                             <img class="experience-photo" src="assets/gilson.png">
+                            <div class="experience-tags-mobile">
+                                <div class="tag">Hardware configuration</div>
+                                <div class="tag">Collaboration</div>
+                                <div class="tag">Technical planning</div>
+                            </div>
                         </div>
                     </div>
                     <div class="experience-tags">
@@ -168,7 +191,7 @@
                     <div class="bottom-right-corner-bracket"></div>
                 </div>
 
-                <div class="experience">
+                <div class="experience apply-fade-in-left">
                     <div class="experience-overview">
                         <div class="title">
                             <h2>IT Assistant</h2>
@@ -184,6 +207,11 @@
                                 </p>
                             </div>
                             <img class="experience-photo" src="assets/north-pointe.png">
+                            <div class="experience-tags-mobile">
+                                <div class="tag">MDM administration</div>
+                                <div class="tag">Hardware repair</div>
+                                <div class="tag">Technical diagnostics</div>
+                            </div>
                         </div>
                     </div>
                     <div class="experience-tags">
@@ -194,7 +222,7 @@
                     <div class="bottom-right-corner-bracket"></div>
                 </div>
 
-                <div class="experience">
+                <div class="experience apply-fade-in-left">
                     <div class="experience-overview">
                         <div class="title">
                             <h2>Dev Ops Intern</h2>
@@ -210,6 +238,11 @@
                                 </p>
                             </div>
                             <img class="experience-photo" src="assets/rep4finlit.png">
+                            <div class="experience-tags-mobile">
+                                <div class="tag">Full-stack web development</div>
+                                <div class="tag">Cross-disciplinary collaboration</div>
+                                <div class="tag">Agile/sprint workflows</div>
+                            </div>
                         </div>
                     </div>
                     <div class="experience-tags">
@@ -225,12 +258,12 @@
 
     <div class = "contact-me-section" id="contact-me">
         <div id = "contact-me-inner">
-            <div id = "contact-text">
+            <div id = "contact-text" class="apply-fade-in-left">
                 <h1>CONTACT ME HERE</h1>
                 <h2>Or email me at: Calebb2202@gmail.com</h2>
             </div>
-            <div id = "email-form">
 
+            <div id = "email-form" class="apply-fade-in-right">
             <form>
                 <h2>Your Email:</h2>
                 <div id = "form-row">

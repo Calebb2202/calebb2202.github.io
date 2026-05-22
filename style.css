@@ -107,8 +107,81 @@ button:hover {
     margin-top: 40px; 
     margin-bottom: 20px;
 }
-
 /* #endregion */
+
+/* ################## */
+/* #region Animations */
+/* ################## */
+.apply-fade-in-scale {
+    animation: fadeInScale linear;
+    animation-timeline: view();
+    animation-range: 0% 40%;
+}
+
+@keyframes fadeInScale {
+    from {
+        opacity: 0.5;
+        scale: 0.5;
+    }
+    to {
+        opacity: 1;
+        scale: 1;
+    }
+}
+
+.apply-fade-in-left{
+    animation: fadeInLeft linear;
+    animation-timeline: view();
+    animation-range: 0% 35%;
+}
+
+@keyframes fadeInLeft {
+    from {
+        opacity: 0.5;
+        transform: translateX(-100px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0px);
+    }
+}
+
+.apply-fade-in-right{
+    animation: fadeInRight linear;
+    animation-timeline: view();
+    animation-range: 0% 35%;
+}
+
+@keyframes fadeInRight {
+    from {
+        opacity: 0.5;
+        transform: translateX(100px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0px);
+    }
+}
+
+#hero-section .apply-fade-in-left {
+    animation: fadeInLeft 1.5s ease;
+}
+
+#hero-section .apply-fade-in-right {
+    animation: fadeInRight 1.5s ease;
+}
+
+#contact-me-inner .apply-fade-in-left{
+    animation: fadeInLeft linear;
+    animation-timeline: view();
+    animation-range: 0% 20%;
+}
+#contact-me-inner .apply-fade-in-right{
+    animation: fadeInRight linear;
+    animation-timeline: view();
+    animation-range: 0% 20%;
+}
+/* #endregion Animations */
 
 /* ###################### */
 /* #region Navigation Bar */
@@ -116,6 +189,8 @@ button:hover {
 
 /* Add a black background color to the top navigation */
 #nav-bar {
+    display: flex;
+    flex-direction: row;
     background-color: var(--container-background);
     width: auto; /* make nav-bar stretch whole page */
     padding: 12px 30px;
@@ -154,11 +229,71 @@ button:hover {
     color: rgb(var(--accent-color-rgb));
 }
 
-#nav-bar-content h1 {
+#hamburger-container {
+    display: flex;
+    transition: transform 0.5s ease;
+    position: fixed;
+    top: 15px;
+    left: 0px;
+    gap: 45px;
+    transform: translateX(-130px);
+}
+
+#hamburger-container.open {
+    transform: translateX(0px);
+}
+
+.hamburger {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+    width: 35px;
+
+    position: relative;
+}
+
+.line1.open{
+    transform: rotate(-45deg) translate(-7px, 7px); 
+}
+
+.line2.open{
+    opacity: 0;
+}
+
+.line3.open{
+    transform: rotate(45deg) translate(-7px, -7px);
+}
+
+input:checked .hamburger-menu {
+    display: block;
+}
+
+.line {
+    width: 35px;
+    height: 3px;
+    background-color: white;
+    border-radius: 15px;
+
+    transition: transform 0.5s ease, opacity 0.25s ease, background-color 0.5s ease;
+}
+
+#main-burger:hover .line {
+    background-color: rgb(var(--accent-color-rgb));
+}
+
+.hamburger-menu {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    transition: transform 0.5s ease;
+}
+
+#nav-bar h1 {
     text-decoration: none;
     font-size: var(--main-font);
     color: rgb(var(--accent-color-rgb));
     margin: 0;
+    text-wrap: nowrap;
 
     margin-left: auto;
 }
@@ -228,7 +363,7 @@ button:hover {
     
     min-width: 448px;
     width: 40vw;
-    max-width: 600px;
+    max-width: 500px;
 
     min-height: 350px;
 
@@ -327,7 +462,6 @@ button:hover {
 
     height: 70%;
     min-height: 640px;
-    /* max-height: 1024px; */
 
     gap: 10px;
 }
@@ -415,7 +549,11 @@ button:hover {
     white-space: nowrap;
 }
 
-.project-container .project-content img {
+.project-description{
+    font-size: 1.15em;
+}
+
+.project-content img {
     width: 60%;
     height: auto;
 
@@ -463,6 +601,8 @@ button:hover {
 
     display: flex;
     flex-direction: column;
+
+    scroll-margin-top: 20px;
 }
 
 #experience-section h1 {
@@ -574,6 +714,7 @@ button:hover {
     justify-content: space-between;
     align-items: center;
     margin: 0 30px;
+    gap: 20px;
 }
 
 .experience-text h3 {
@@ -615,6 +756,18 @@ button:hover {
 
 .experience-tags .tag {
     padding: 6px 12px;
+}
+
+.experience-tags-mobile {
+    display: none;
+    gap: 8px;
+
+    align-content: center;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+
+    flex: 1;
 }
 
 .bottom-right-corner-bracket {
@@ -819,8 +972,8 @@ button:hover {
     }
 
     #head-shot {
-        min-width: 280px;
-        min-height: 280px;
+        min-width: 320px;
+        min-height: 320px;
     }
 
     #about-me {
@@ -883,17 +1036,43 @@ button:hover {
 }
 
 @media (max-width: 768px) {
+    #head-shot {
+        position: absolute;
+        top: 40px;
+
+        min-width: 280px;
+        min-height: 280px;
+    }
+
+    #about-me {
+        margin-top: 100px;
+        min-width: 400px;
+    }
+
     #arrow {
         display: none;
     }
 
     .experience {
         width: 100%;
+        font-size: 1.05rem;
     }
 
-    .experience-text p {
-        margin-left: 10px;
-    }    
+    .experience-content {
+        flex-direction: column;
+    }
+
+    .experience-tags {
+        display: none;
+    }
+
+    .experience-tags-mobile {
+        display: flex;
+    }
+
+    .experience-photo {
+        width: 175px;
+    }
 
     #contact-me-inner {
         flex-direction: column;
