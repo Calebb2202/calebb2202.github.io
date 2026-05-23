@@ -9,8 +9,8 @@ const mainBurger = document.getElementById("main-burger")
     });
 
 // Adjust line height of project descriptions based on long description length
-const projectDescriptions = document.getElementsByClassName("project-description")
 
+const projectDescriptions = document.getElementsByClassName("project-description")
 function updateProjectDescriptionLineHeight() {
     const base = window.innerWidth < 900 ? 500 : 380;
     for (let i = 0; i < projectDescriptions.length; i++) {
