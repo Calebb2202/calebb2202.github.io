@@ -120,7 +120,7 @@ button:hover {
 .apply-fade-in-scale {
     animation: fadeInScale linear;
     animation-timeline: view();
-    animation-range: 0% 40%;
+    animation-range: 0% 35%;
 }
 
 @keyframes fadeInScale {
@@ -336,8 +336,8 @@ button:hover {
     /* margin-top: 25%; 10vh is height of navbar */
     padding: 15px;
 
-    border-right: 2px solid var(--container-background);
-    border-image: linear-gradient(to top, var(--accent-color) 20px, transparent 20px) 1;
+    /* border-right: 2px solid var(--container-background);
+    border-image: linear-gradient(to top, var(--accent-color) 20px, transparent 20px) 1; */
     border-bottom: solid 2px var(--accent-color);
 
     z-index: 100;
@@ -1084,9 +1084,10 @@ button:hover {
     }
 }
 
+/* Mobile mode */
 @media (max-width: 768px), (orientation: portrait) {
     #nav-bar {
-        height: 10vh;
+        height: 8vh;
         font-size: 2em;
     }
 
@@ -1157,6 +1158,7 @@ button:hover {
     #projects {
         display: flex;
         flex-direction: column;
+        align-items: center;
         height: auto;
         font-size: 2em;
         gap: 40px;
@@ -1224,8 +1226,32 @@ button:hover {
         flex-direction: column;
     }
 
+    #contact-me-inner .apply-fade-in-right {
+        animation: fadeInRight unset;
+        animation-timeline: unset;
+        animation-range: unset;
+    }
+
+    #contact-me-inner .apply-fade-in-left {
+        animation: fadeInRight unset;
+        animation-timeline: unset;
+        animation-range: unset;
+    }
+
+    #email-form {
+        font-size: 2em;
+    }
+
     #contact-text {
-        font-size: 1.2em;
+        font-size: 2em;
+    }
+
+    #email-form input {
+        font-size: 1.5em;
+    }
+
+    #email-form textarea {
+        font-size: 1.5em;
     }
 
     #email-form {

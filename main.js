@@ -20,7 +20,6 @@ function updateProjectDescriptionLineHeight() {
     //     const textLength = p.textContent.length;
     //     p.style.lineHeight = base / textLength;
     // }
-    console.log("hello")
 }
 
 function onResize() {
