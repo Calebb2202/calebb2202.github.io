@@ -65,6 +65,7 @@ body:hover {
 h1 {
     margin: 0;
     padding: 0;
+    font-size: var(--title);
     font-family: 'Fredoka';
     font-weight: 600;
 }
@@ -106,6 +107,10 @@ button:hover {
 .section-title {
     margin-top: 40px; 
     margin-bottom: 20px;
+
+    font-size: var(--subtitle);
+    color: #FFFFFF;
+    text-align: center;
 }
 /* #endregion */
 
@@ -115,7 +120,7 @@ button:hover {
 .apply-fade-in-scale {
     animation: fadeInScale linear;
     animation-timeline: view();
-    animation-range: 0% 40%;
+    animation-range: 0% 35%;
 }
 
 @keyframes fadeInScale {
@@ -191,6 +196,9 @@ button:hover {
 #nav-bar {
     display: flex;
     flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
     background-color: var(--container-background);
     width: auto; /* make nav-bar stretch whole page */
     padding: 12px 30px;
@@ -198,7 +206,7 @@ button:hover {
 
     /* makes nav bar stick to top */
     position: sticky;
-    z-index: 1;
+    z-index: 2;
     top: 0;
 }
 
@@ -240,7 +248,8 @@ button:hover {
     font-size: 1.5em;
 
     transition: transform 0.5s ease;
-    transform: translateX(-200px);
+    transform: translateX(-9em);
+    /* transform: translateY(50%); */
 
     /* background-color: var(--container-background);
     border-right: solid 2px rgb(var(--accent-color-rgb));
@@ -254,10 +263,13 @@ button:hover {
 .hamburger {
     display: flex;
     flex-direction: column;
-    gap: 7px;
-    width: 35px;
-    padding: 11px;
-    height: 30px;
+    justify-content: center;
+    align-items: center;
+
+    gap: 1vh;
+    margin: 0;
+
+    height: 50%;
 
     /* border-left: 2px solid var(--container-color); */
     /* border-bottom: 2px solid rgb(var(--accent-color-rgb)); */
@@ -266,17 +278,41 @@ button:hover {
 
     z-index: 10;
 
-    transform: translateX(10px);
-    transition: transform 0.5s ease, border 0.5s ease;
+    transition: transform 0.5s ease, border 0.5s ease, gap 0.5s ease;
+}
+
+#main-burger {
+    padding: 3.25vh 0;
+    padding-right: 30px;
+    display: none;
 }
 
 #main-burger.open {
-    transform: translateX(-10px);
     border-right: 2px solid rgb(var(--accent-color-rgb));
+    transform: translateX(12em);
+}
+
+.hamburger.open {
+    gap: 1vh;
+}
+
+.line {
+    width: 10vw;
+    height: 0.75vh;
+    background-color: white;
+    border-radius: 15px;
+
+    transition: transform 0.5s ease, opacity 0.25s ease, background-color 0.5s ease;
+    transform-origin: center;
+}
+
+#main-burger:hover .line {
+    background-color: rgb(var(--accent-color-rgb));
 }
 
 .line1.open{
-    transform: rotate(-45deg) translate(-7px, 7px); 
+    transform: translateY(calc(1vh + 0.75vh)) rotate(-45deg);
+    /* transform: rotate(-45deg) translate(-2.3vw, 2.3vw);  */
 }
 
 .line2.open{
@@ -284,37 +320,28 @@ button:hover {
 }
 
 .line3.open{
-    transform: rotate(45deg) translate(-7px, -7px);
+    transform: translateY(calc(-1vh - 0.75vh)) rotate(45deg);
+    /* transform: rotate(45deg) translate(-2.3vw, -2.3vw); */
 }
 
-.line {
-    width: 35px;
-    height: 3px;
-    background-color: white;
-    border-radius: 15px;
-
-    transition: transform 0.5s ease, opacity 0.25s ease, background-color 0.5s ease;
-}
-
-#main-burger:hover .line {
-    background-color: rgb(var(--accent-color-rgb));
-}
-
-.hamburger-menu {
+#hamburger-menu {
     display: flex;
     flex-direction: column;
     gap: 20px;
+    min-height: 10vh;
     transition: transform 0.5s ease;
 
     background-color: var(--container-background);
 
+    /* margin-top: 25%; 10vh is height of navbar */
     padding: 15px;
 
-    border-right: 2px solid;
-    border-image: linear-gradient(to top, var(--accent-color) 78.9%, transparent 79%) 1;
+    /* border-right: 2px solid var(--container-background);
+    border-image: linear-gradient(to top, var(--accent-color) 20px, transparent 20px) 1; */
     border-bottom: solid 2px var(--accent-color);
-}
 
+    z-index: 100;
+}
 
 #nav-bar h1 {
     text-decoration: none;
@@ -336,7 +363,7 @@ button:hover {
     align-items: center;
     justify-content: center;
 
-    height: 90vh;
+    height: 85vh;
 
     width: 100%;
     margin-bottom: 4vh;
@@ -381,6 +408,8 @@ button:hover {
 
 /* #region About Me Section */
 #about-me {
+    order: 1;
+
     background-image: linear-gradient(to bottom right, var(--container-background) 0%, var(--container-background) 50%, #4e4e4e 50%);
     /* background-image: linear-gradient(to bottom right, var(--container-background) 40%, #4e4e4e); */
 
@@ -447,6 +476,8 @@ button:hover {
 /* #endregion */
 
 #head-shot {
+    order: 2;
+
     width: 30vw;
     height: 30vw;
 
@@ -486,16 +517,9 @@ button:hover {
     width: 95%;
     max-width: 1440px;
 
-    min-height: 640px;
-    height: 80%;
-
     gap: 10px;
-}
 
-#projects-section h1 {
-    text-align: center;
-    font-size: var(--subtitle);
-    color: #FFFFFF;
+    align-items: stretch;
 }
 
 /* #region project container */
@@ -505,44 +529,44 @@ button:hover {
     border-radius: 35px;
 
     width: 400px;
-    height: 95%;
-    max-height: 1000px;
 
     display: flex;
     align-items: center;
     justify-content: center;
+
+    padding: 20px 0;
 }
 
 #projects h2 {
     text-align: center;
+    align-items: center;
     background-color: #D9D9D9;
     border-radius: 35px;
     min-width: 90%;
-    height: 5%;
     padding: 12px;
 }
 
 /* #region project content */
 
-.project-container .project-content {
+.project-content {
     display: flex;
     flex-direction: column;
-    justify-content: flex-end;
+    justify-content: flex-start;
     background-color: var(--content-background);
-    border-top-left-radius: 27px;
-    border-top-right-radius: 27px;
+    border-top-left-radius: 37px;
+    border-top-right-radius: 37px;
 
-    height: 95%;
+    height: 100%;
     width: 90%;
 }
 
-.project-container .project-content h3 {
+.project-content h3 {
     margin-top: 5px;
     margin-left: 10px;
     margin-right: 10px;
 }
 
-.project-container .project-content p {
+.project-content p {
     margin-left: 24px;
     margin-right: 10px;
     font-size: var(--smaller-details);
@@ -579,12 +603,10 @@ button:hover {
 
 .project-description{
     font-size: 1.15em;
-    /* line-height: 1.15em; */
 }
 
 .project-content img {
     width: 60%;
-    max-width: 100%;
     box-sizing: border-box;
 
     height: auto;
@@ -595,7 +617,6 @@ button:hover {
 
     align-self: center;
     margin-top: auto;
-    margin-top: 10px;
     margin-bottom: 20px;
 }
 /* #endregion */
@@ -640,9 +661,6 @@ button:hover {
 }
 
 #experience-section h1 {
-    color: white;
-    font-size: var(--subtitle);
-    text-align: center;
     margin-bottom: 20px
 }
 
@@ -729,7 +747,7 @@ button:hover {
     box-sizing: border-box; */
     border-radius: 15px;
 
-    white-space: nowrap;
+    /* white-space: nowrap; */
 }
 
 .title h2 {
@@ -964,7 +982,7 @@ button:hover {
         width: 300px;
     }
 
-    .project-container .project-content img {
+    .project-content img {
         width: 18vw;
     }
 }
@@ -991,7 +1009,7 @@ button:hover {
         width: 300px;
     }
 
-    .project-container .project-content img {
+    .project-content img {
         width: 20vw;
     }
 }
@@ -1038,7 +1056,6 @@ button:hover {
 
     .project-description p {
         margin-bottom: 25px;
-        /* line-height: 1.9em; */
     }
 
     .project-divider {
@@ -1067,27 +1084,117 @@ button:hover {
     }
 }
 
+/* Mobile mode */
 @media (max-width: 768px), (orientation: portrait) {
+    #nav-bar {
+        height: 8vh;
+        font-size: 2em;
+    }
+
+    .section-title{
+        font-size: 5em
+    }
+
+    #nav-bar h1 {
+        font-size: 2em;
+    }
+
     #nav-bar-content {
         display: none;
+    }
+
+    #main-burger {
+        display: flex;
     }
 
     #hamburger-container {
         display: flex;
     }
 
+    #hero-section {
+        scroll-margin-top: calc(10vh + 66px);
+    }
+
+    #hero-inner {
+        display: flex;
+        flex-direction: column;
+        margin-top: -10vh;
+    }
+
     #head-shot {
-        position: absolute;
-        top: 80px;
+        order: 1;
+        z-index: 1;
 
         min-width: 280px;
         min-height: 280px;
+
+        max-width: 45%;
+        max-height: unset;
+
+        width: 50vw;
+        height: auto;
     }
 
     #about-me {
-        margin-top: 100px;
-        min-width: 400px;
+        order: 2;
+
+        margin-top: -200px;
         padding-top: 100px;
+
+        min-width: 400px;
+        width: 70vw;
+        max-width: 75%;
+        
+        min-height: 350px;
+        height: 20vh;
+
+        font-size: 1.5em;
+    }
+
+    #projects-section {
+        scroll-margin-top: calc(10vh + 50px);
+    }
+
+    #projects {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        height: auto;
+        font-size: 2em;
+        gap: 40px;
+    }
+
+    .project-container {
+        width: 80%;
+        max-height: unset;
+        padding: 50px 0px;
+    }
+
+    .project-content {
+        min-height: 30vh;
+        gap: 20px;
+    }
+
+    .project-description p {
+        margin-bottom: 25px;
+    }
+
+    .project-content img {
+        width: 60%;
+        max-width: unset;
+        height: auto;
+    }
+
+    .project-divider {
+        display: none;
+    }
+
+    .project-divider-horizontal {
+        display: block;
+    }
+
+    #experience-section {
+        scroll-margin-top: calc(10vh);
     }
 
     #arrow {
@@ -1096,7 +1203,7 @@ button:hover {
 
     .experience {
         width: 100%;
-        font-size: 1.05rem;
+        font-size: 2em;
     }
 
     .experience-content {
@@ -1119,8 +1226,32 @@ button:hover {
         flex-direction: column;
     }
 
+    #contact-me-inner .apply-fade-in-right {
+        animation: fadeInRight unset;
+        animation-timeline: unset;
+        animation-range: unset;
+    }
+
+    #contact-me-inner .apply-fade-in-left {
+        animation: fadeInRight unset;
+        animation-timeline: unset;
+        animation-range: unset;
+    }
+
+    #email-form {
+        font-size: 2em;
+    }
+
     #contact-text {
-        font-size: 1.2em;
+        font-size: 2em;
+    }
+
+    #email-form input {
+        font-size: 1.5em;
+    }
+
+    #email-form textarea {
+        font-size: 1.5em;
     }
 
     #email-form {

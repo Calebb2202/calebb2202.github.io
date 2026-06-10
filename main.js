@@ -1,26 +1,30 @@
 // main-burger menu
 const mainBurger = document.getElementById("main-burger")
-    mainBurger.addEventListener("click", function(event){
-        mainBurger.querySelectorAll(".line").forEach(function(child) {
-            child.classList.toggle("open");
-        });
-        document.getElementById("hamburger-container").classList.toggle("open")
-        document.getElementById("main-burger").classList.toggle("open")
+mainBurger.addEventListener("click", burger);
+
+function burger () {
+    mainBurger.querySelectorAll(".line").forEach(function(child) {
+        child.classList.toggle("open");
     });
+    document.getElementById("hamburger-container").classList.toggle("open")
+    document.getElementById("main-burger").classList.toggle("open")
+}
 
 // Adjust line height of project descriptions based on long description length
 
 const projectDescriptions = document.getElementsByClassName("project-description")
 function updateProjectDescriptionLineHeight() {
-    const base = window.innerWidth < 900 ? 500 : 380;
-    for (let i = 0; i < projectDescriptions.length; i++) {
-        const p = projectDescriptions[i].querySelector('p');
-        const textLength = p.textContent.length;
-        p.style.lineHeight = base / textLength;
-    }
+    // const base = window.innerWidth < 900 ? 500 : 500;
+    // for (let i = 0; i < projectDescriptions.length; i++) {
+    //     const p = projectDescriptions[i].querySelector('p');
+    //     const textLength = p.textContent.length;
+    //     p.style.lineHeight = base / textLength;
+    // }
 }
 
 function onResize() {
+    
+
     updateProjectDescriptionLineHeight();
     // make experience arrow height
     const arrowLine = document.getElementById("arrow-line")
@@ -34,16 +38,15 @@ function onResize() {
 
     for (let i = 0; i < projectDivider.length; i++){
         projectDivider[i].style.height = 0;
-        if (window.innerWidth >= 900) {
-            projectDivider[i].style.height = `${projects.offsetHeight + 0}px`
+        if (window.innerWidth > 900) {
+            projectDivider[i].style.height = `${projects.offsetHeight}px`
         }
         
 
         projectDividerHorizontal[i].style.width = 0
-        if (window.innerWidth <= 900) {
+        if (window.innerWidth <= 900 || window.innerWidth < window.innerHeight) {
             projectDividerHorizontal[i].style.width = `${projects.offsetWidth*0.85}px`
         }
-        
     }
 }
 onResize()
