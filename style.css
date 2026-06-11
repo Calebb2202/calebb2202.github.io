@@ -288,14 +288,12 @@ button:hover {
 }
 
 #main-burger.open {
-    border-right: 2px solid rgb(var(--accent-color-rgb));
     transform: translateX(12em);
 }
 
 .hamburger.open {
     gap: 1vh;
 }
-
 .line {
     width: 10vw;
     height: 0.75vh;
@@ -311,7 +309,7 @@ button:hover {
 }
 
 .line1.open{
-    transform: translateY(calc(1vh + 0.75vh)) rotate(-45deg);
+    transform: translateY(calc(0.9vh + 0.75vh)) rotate(-45deg);
     /* transform: rotate(-45deg) translate(-2.3vw, 2.3vw);  */
 }
 
@@ -320,7 +318,7 @@ button:hover {
 }
 
 .line3.open{
-    transform: translateY(calc(-1vh - 0.75vh)) rotate(45deg);
+    transform: translateY(calc(-0.9vh - 0.75vh)) rotate(45deg);
     /* transform: rotate(45deg) translate(-2.3vw, -2.3vw); */
 }
 
@@ -1170,6 +1168,12 @@ button:hover {
         padding: 50px 0px;
     }
 
+    #projects-section .apply-fade-in-scale {
+        animation: fadeInRight unset;
+        animation-timeline: unset;
+        animation-range: unset;
+    }
+
     .project-content {
         min-height: 30vh;
         gap: 20px;
@@ -1216,6 +1220,12 @@ button:hover {
 
     .experience-tags-mobile {
         display: flex;
+    }
+
+    #experience-section .apply-fade-in-left {
+        animation: fadeInRight unset;
+        animation-timeline: unset;
+        animation-range: unset;
     }
 
     .experience-photo {
